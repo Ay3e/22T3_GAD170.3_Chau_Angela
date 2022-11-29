@@ -6,13 +6,14 @@ namespace AngelaChau
     
     public class PaperHazard : MonoBehaviour
     {
-        public GameObject playerCharacter;
+        [SerializeField] Transform respawn;
+        [SerializeField] Transform characterLocation;
         private void OnCollisionEnter(Collision collision)
         {
             Debug.Log("PlayerCharacter Died");
             //if player touches paper
             //restart scene
-            playerCharacter.GetComponent<Transform>().transform.position = new Vector3(-15, 1, -20);
+            characterLocation.transform.position = respawn.transform.position;
         }
 
         //if(Input.GetKeyDown(KeyCode.E))
