@@ -5,18 +5,18 @@ namespace AngelaChau
 {
     public class ShowCoffeeTaskUI : MonoBehaviour
     {
-        [SerializeField]private GameObject uiObject;
+        [SerializeField]private GameObject trigger;
         private void Start()
         {
-            uiObject.SetActive(false);
+            trigger.SetActive(false);
         }
 
         private void OnTriggerEnter(Collider player)
         {
             if(player.gameObject.tag == "Player")
             {
-                uiObject.SetActive(true);
-                Destroy(uiObject, 5f);
+                trigger.SetActive(true);
+                Destroy(trigger, 5f);
                 Destroy(gameObject, 5f);
             }
         }
