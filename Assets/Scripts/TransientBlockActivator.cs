@@ -20,9 +20,8 @@ namespace AngelaChau
             //access ALL blocks and turn them tangible
             for(int i=0; i< transientBlocksToActivate.Length; i++)
             {
-                transientBlocksToActivate.TurnIntangible();
+
             }
-            
         }
     }
 }
