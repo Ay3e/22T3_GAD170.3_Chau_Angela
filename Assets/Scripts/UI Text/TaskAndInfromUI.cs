@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace AngelaChau
 {
-    public class ShowCoffeeTaskUI : MonoBehaviour
+    public class TaskAndInfromUI : MonoBehaviour
     {
         [SerializeField]private GameObject trigger;
         private void Start()

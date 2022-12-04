@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace AngelaChau
 {
-    public class PressEToDrinkUI : MonoBehaviour
+    public class PressEUI : MonoBehaviour
     {
         [SerializeField] private GameObject trigger;
 
