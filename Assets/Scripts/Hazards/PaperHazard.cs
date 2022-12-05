@@ -1,31 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 namespace AngelaChau
 {
 
     public class PaperHazard : MonoBehaviour
     {
-        [SerializeField] Transform respawn;
-        [SerializeField] GameObject characterLocation;
-        private void OnCollisionEnter(Collision collision)
+        private int sceneNumber;
+
+        private void OnTriggerEnter(Collider other)
         {
-            Debug.Log("PlayerCharacter Died");
-            //if player touches paper
-            //restart scene
-            if (collision.gameObject.CompareTag("characterLocation"))
+            if (other.CompareTag("Player"))
             {
-                characterLocation.transform.position = respawn.position;
+                SceneManager.LoadScene(sceneNumber);
             }
         }
-
-        /*if(Input.GetKeyDown(KeyCode.E))
-        //{
-        //  DO THE THING
-        //  1. set UI gameobject to ACTIVE
-        //  2. if the player presses the button 
-        //}
-        */
     }
 }
 
