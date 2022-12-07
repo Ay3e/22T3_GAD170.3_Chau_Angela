@@ -9,10 +9,25 @@ namespace AngelaChau
         [SerializeField] private GameObject trigger;
         [SerializeField] private GameObject floor;
         [SerializeField] private GameObject coffee;
+        [SerializeField] private bool isPlayerCharacterNearBy = false;
 
+        private void OnTriggerEnter(Collider other)
+        {
+            if(other.gameObject.name == "Player Character")
+            {
+                isPlayerCharacterNearBy = true;
+            }
+        }
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.gameObject.name == "Player Character")
+            {
+                isPlayerCharacterNearBy = false;
+            }
+        }
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if(Input.GetKeyDown(KeyCode.E) && isPlayerCharacterNearBy==true)
             {
                 Debug.Log("E");
                 Destroy(coffee);
