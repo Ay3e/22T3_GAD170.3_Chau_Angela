@@ -5,11 +5,9 @@ using UnityEngine.SceneManagement;
 
 namespace AngelaChau
 {
-
     public class PaperHazard : MonoBehaviour
     {
         private int sceneNumber;
-
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Player"))
